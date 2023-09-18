@@ -26,6 +26,12 @@ def list_all_items():
 def mark_completed(index):
     checklist[index] = '√' + checklist[index]
 
+def user_input(prompt):
+    user_input = input(prompt)
+    return user_input
+
+user_value = user_input("Please Enter a value:")
+print(user_value)
 
 def select(function_code):
     # Create item
@@ -48,6 +54,7 @@ def select(function_code):
     else:
         print("Unknown Option")
 
+
 # TEST
 def test():
     select("C")
@@ -59,11 +66,11 @@ def test():
     list_all_items()
     # Continue until all code is run
 
-def user_input(prompt):
-    user_input = input(prompt)
-    return user_input
-
-user_value = user_input("Please Enter a value:")
-print(user_value)
-
+# Run Tests
 test()
+
+running = True
+while running:
+    selection = user_input(
+        "Press C to add to list, R to Read from list and P to display list")
+    select(selection)
